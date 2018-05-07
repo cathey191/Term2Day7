@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Questionnaire</title>
+		<style>
+			*{
+				box-sizing: border-box;
+				margin: 0 auto;
+				padding: 0;
+			}
+			body{
+				background-color: lightblue;
+			}
+			.questionnaire, .marks{
+				width: 50vw;
+				float: left;
+				padding: 2em;
+			}
+			.button{
+				border: 2px solid black;
+				font-size: 1em;
+				padding: 0.25em;
+			}
+			input{
+				height: 2.5em;
+			}
+			.question{
+				font-size: 1.25em;
+			}
+			.mark{
+				font-size: 1.25em;
+			}
+			.total{
+				font-size: 2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="questionnaire">
+			<form class="form" action="index.html" method="post">
+				<p class="question" id="question">What is a capital of New Zealand</p>
+				<input type="text" name="input" id="input">
+				<button type="button" name="button" class="button" id="button">Submit</button>
+			</form>
+		</div>
+		<div class="marks">
+			<p class="mark">Pass</p>
+			<p class="mark" id="passed">0</p>
+			<p class="mark">Fail</p>
+			<p class="mark" id="failed">0</p>
+			<p class="mark">Total</p>
+			<p class="total" id="total">0</p>
+
+		</div>
+
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+		<script>
+			$(document).ready(function(){
+
+				var correctAnswers = [];
+				var incorrectAnswers = [];
+
+				$('#button').click(function(){
+					var text = document.getElementById('input').value;
+					// console.log(text);
+					if(text === 'Wellington'){
+						correctAnswers.push(text)
+						questionTwo()
+					} else {
+						incorrectAnswers.push(text)
+					}
+					var pass = correctAnswers.length;
+					var passString = pass.toString();
+					var fail = incorrectAnswers.length;
+					var failString = fail.toString();
+					var totalAnswered = pass + fail;
+					$('#passed').text(passString);
+					$('#failed').text(failString);
+					$('#total').text(totalAnswered);
+				})
+
+				function questionTwo(){
+					$('#question').text('Test')
+				}
+
+			})
+		</script>
+	</body>
+</html>

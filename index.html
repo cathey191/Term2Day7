@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Day 7</title>
+		<style>
+			body{
+				background-color: lightblue;
+				font-size: 15px;
+			}
+			.body{
+				width: 1000px;
+				height: 500px;
+				/* text-align: center; */
+				margin: 0 auto;
+			}
+			.partOne{
+				text-align: center;
+			}
+			.button{
+				border: 2px solid black;
+			}
+			.notes{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="body">
+			<div class="notes">
+				<h3>Parameters vs Arguments</h3>
+				<h4>Parameters</h4>
+				<p>function getArea(width, height){
+				<br /> console.log(width*height);
+				<br />}</p>
+				<h4>Arguments</h4>
+				<p>getArea(50, 100)</p>
+			</div>
+			<div class="partOne">
+				<form class="form" action="index.html" method="post">
+					<p id="question">What is a capital of New Zealand</p>
+					<input type="text" name="input" id="input">
+					<button type="button" name="button" class="button" id="button">Submit</button>
+				</form>
+			</div>
+			<div class="partTwo">
+				<ul>
+					<li id="one">1</li>
+					<li id="two">2</li>
+					<li id="three">3</li>
+					<li id="four">4</li>
+					<li id="five">5</li>
+					<li>6</li>
+					<li>7</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			$('#button').click(function(){
+				var text = document.getElementById('input').value;
+				// console.log(text);
+				if(text === 'Wellington'){
+					console.log('pass');
+				} else {
+					console.log('fail');
+				}
+			})
+
+			// var width = document.querySelector('.body').style.width;
+			// var height = document.querySelector('.body').style.height;
+			// console.dir(document.body.style);
+
+			// function getArea (width, height) {
+				// var width = 10;
+				// var height = 500;
+				// var width = document.querySelector('.body').style.width;
+				// var height = document.querySelector('.body').style.height;
+				// return width * height;
+			// }
+			// var result = getArea();
+			// console.log(result);
+			// getArea(50, 100)
+
+			// function changeColor (id, color) {
+			// 	var el = document.getElementById(id);
+			// 	el.style.color = color;
+			// };
+			// changeColor('one', 'purple');
+			// changeColor('two', 'blue');
+			// changeColor('three', 'green');
+
+		})
+	</script>
+</html>
